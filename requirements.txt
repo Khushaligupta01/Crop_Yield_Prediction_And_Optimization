@@ -4,6 +4,6 @@ numpy
 scikit-learn
 xgboost
 lightgbm
-tensorflow
 joblib
 Pillow
+tensorflow==2.15.0
