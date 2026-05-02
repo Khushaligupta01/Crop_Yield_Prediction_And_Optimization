@@ -2,50 +2,59 @@
 
 ## 📌 Overview
 
-This project is an end-to-end machine learning and deep learning system designed to **predict crop yield** based on environmental and agricultural factors.
+This project predicts crop yield using both **Machine Learning** and **Deep Learning (GRU)** models based on environmental and agricultural factors.
 
-It includes:
+It provides two interactive applications:
 
-* 🔹 Multiple Machine Learning models (Regression)
-* 🔹 Deep Learning model using GRU (Gated Recurrent Unit)
-* 🔹 Interactive web applications built with Streamlit
-* 🔹 Separate deployments for modular usage
+* 📊 Regression-based model comparison
+* 🧠 GRU-based deep learning prediction
 
----
-
-## 🚀 Live Applications
-
-* 🔗 **Regression App:** *(add your deployed link here)*
-* 🔗 **GRU Deep Learning App:** *(add your deployed link here)*
+The system helps in understanding how different factors influence crop yield and supports data-driven agricultural decisions.
 
 ---
 
-## 🧠 Models Implemented
+## ✨ Features
 
-### 🔹 Machine Learning (Regression Models)
+* Predict crop yield from user inputs
+* Compare multiple ML models in one place
+* Deep learning prediction using GRU
+* Simple and interactive UI using Streamlit
+* Real-time results
+
+---
+
+## 🧠 Models Used
+
+### 🔹 Machine Learning Models
 
 * Linear Regression
-* Ridge Regression
-* Lasso Regression
+* Ridge & Lasso Regression
 * Decision Tree
-* Gradient Boosting
 * Random Forest
+* Gradient Boosting
 * XGBoost
 * LightGBM
 
 ### 🔹 Deep Learning
 
-* GRU (Gated Recurrent Unit) Neural Network using TensorFlow/Keras
+* GRU (Gated Recurrent Unit)
 
 ---
 
-## 📊 Features
+## 📊 Dataset
 
-* 📈 Predict crop yield based on real-world agricultural inputs
-* 🔍 Compare multiple regression models in one interface
-* 🧠 Advanced GRU-based prediction with multi-step input flow
-* 🎛️ Interactive and user-friendly UI using Streamlit
-* ⚡ Real-time predictions
+The dataset includes important agricultural and environmental features:
+
+* Rainfall
+* Temperature
+* Soil Type
+* Crop Type
+* Fertilizer Usage
+* Irrigation
+* Weather Conditions
+* Days to Harvest
+
+🎯 Target: **Crop Yield (tons per hectare)**
 
 ---
 
@@ -55,31 +64,19 @@ It includes:
 crop_yield_prediction_and_optimization/
 
 ├── apps/
-│   ├── gru_app.py              # GRU-based prediction app
-│   └── regression_app.py       # ML models comparison app
+│   ├── regression_app.py
+│   └── gru_app.py
 │
 ├── models/
-│   ├── gru/
-│   │   ├── gru_crop_yield_model.keras
-│   │   ├── scaler.pkl
-│   │   └── encoder.pkl
-│   │
-│   └── regression/
-│       ├── decision_tree.pkl
-│       ├── gradient_boosting.pkl
-│       ├── lasso_regression.pkl
-│       ├── lightgbm.pkl
-│       ├── linear_regression.pkl
-│       ├── ridge_regression.pkl
-│       ├── standard_scaler.pkl
-│       └── xgboost.pkl
-│
-├── data/
-│   └── sample_data.csv
+│   ├── regression/
+│   └── gru/
 │
 ├── notebooks/
-│   ├── gru_model/
-│   └── regression_model/
+│   ├── regression_model/
+│   └── gru_model/
+│
+├── dataset/
+│   └── sample_data.csv
 │
 ├── requirements.txt
 ├── runtime.txt
@@ -88,22 +85,35 @@ crop_yield_prediction_and_optimization/
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Setup Instructions (Run Locally)
 
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Crop_Yield_Prediction_And_Optimization.git
+git clone https://github.com/khushaligupta01/Crop_Yield_Prediction_And_Optimization.git
 cd Crop_Yield_Prediction_And_Optimization
 ```
 
 ---
 
-### 2️⃣ Create virtual environment (recommended)
+### 2️⃣ Create virtual environment
 
 ```bash
 python -m venv venv
-venv\Scripts\activate   # Windows
+```
+
+#### Activate environment
+
+**Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+**Mac/Linux:**
+
+```bash
+source venv/bin/activate
 ```
 
 ---
@@ -116,15 +126,13 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Run the Applications
+### 4️⃣ Run applications
 
 ### 🔹 Regression App
 
 ```bash
 streamlit run apps/regression_app.py
 ```
-
----
 
 ### 🔹 GRU App
 
@@ -134,79 +142,20 @@ streamlit run apps/gru_app.py
 
 ---
 
-## 🌐 Deployment
+## 📈 Results
 
-This project is deployed using **Streamlit Community Cloud**.
-
-### 🔹 Deployment Strategy
-
-* Both apps are deployed **separately**
-* Same repository, different entry points
-
-| App        | Entry File               |
-| ---------- | ------------------------ |
-| Regression | `apps/regression_app.py` |
-| GRU        | `apps/gru_app.py`        |
-
----
-
-## 📊 Dataset
-
-* The dataset contains features like:
-
-  * Region
-  * Soil Type
-  * Crop Type
-  * Rainfall
-  * Temperature
-  * Fertilizer Usage
-  * Irrigation
-  * Weather Conditions
-  * Days to Harvest
-
-* A sample dataset is included:
-
-```
-data/sample_data.csv
-```
-
----
-
-## 🧠 Tech Stack
-
-* **Python**
-* **Streamlit**
-* **Scikit-learn**
-* **TensorFlow / Keras**
-* **Pandas, NumPy**
-* **XGBoost, LightGBM**
-
----
-
-## 📈 Model Performance (GRU)
-
-* R² Score: **0.91+**
-* RMSE: **~0.50**
-* MAE: **~0.40**
+* Regression models achieve **~0.91 R² score**
+* GRU model performs comparably with strong generalization
+* Ensemble models provide stable performance across datasets
 
 ---
 
 ## 🚧 Future Improvements
 
-* 🔹 Merge both apps into a single unified dashboard
-* 🔹 Add API support (FastAPI)
-* 🔹 Integrate real-time weather data
-* 🔹 Improve UI/UX with advanced visualization
-* 🔹 Add model explainability (SHAP, LIME)
+* Combine both apps into a single dashboard
+* Add real-time weather data integration
+* Improve UI/UX
+* Add explainability (SHAP, LIME)
+* Deploy using scalable cloud infrastructure
 
 ---
-
-## ⚠️ Notes
-
-* TensorFlow version is pinned for deployment compatibility
-* Large model files may affect deployment performance
-* Ensure correct file paths when running locally
-
----
-
-Give it a ⭐ on GitHub — it helps!
